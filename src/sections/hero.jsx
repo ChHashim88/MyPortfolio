@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1]">
-      <div className="max-w-6xl gap-x-20 mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 space-y-10 md:space-y-0">
+      <div className="max-w-6xl gap-x-20 gap-y-10 mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 space-y-10 md:space-y-0">
 
        
         <motion.div

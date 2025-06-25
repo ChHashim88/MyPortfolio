@@ -15,7 +15,7 @@ const Navbar = () => {
 
           
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-600 hover:text-blue-600 transition">Home</a>
+            <a href="#hero" className="text-gray-600 hover:text-blue-600 transition">Home</a>
             <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
             <a href="#projects" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
             <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        
         {isOpen && (
           <div className="md:hidden mt-2 space-y-2 px-2 pb-3">
             <a href="#home" className="block text-gray-600 hover:text-blue-600 transition">Home</a>
