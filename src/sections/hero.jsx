@@ -4,14 +4,15 @@ import MyPhoto from '../assets/myphoto.jpg';
 
 const Hero = () => {
   const gridSize = 4;
-  const blockSize = 100 / gridSize; 
-  const missingPieces = [15,8,3]; 
+  const imageSize = 400; // Image size in px (e.g., 400x400)
+  const cellSize = imageSize / gridSize; // = 100
+  const missingPieces = [15, 8, 3];
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1]">
-      <div className="max-w-6xl gap-x-20 gap-y-10 mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 space-y-10 md:space-y-0">
+      <div className="max-w-6xl gap-x-20 gap-y-5 mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 space-y-10 md:space-y-0">
 
-       
+        {/* Text Block */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -44,7 +45,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-       
+        {/* Puzzle Grid */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -71,8 +72,9 @@ const Hero = () => {
                 className="relative w-full h-0 pb-[100%] overflow-hidden rounded-xl shadow-xl cursor-pointer"
                 style={{
                   backgroundImage: `url(${MyPhoto})`,
-                  backgroundSize: `${gridSize * 100}%`,
-                  backgroundPosition: `${col * blockSize}% ${row * blockSize}%`,
+                  backgroundSize: `${imageSize}px ${imageSize}px`,
+                  backgroundPosition: `-${col * cellSize}px -${row * cellSize}px`,
+                  backgroundRepeat: 'no-repeat',
                 }}
               ></motion.div>
             );

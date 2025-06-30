@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import Portfolio from '../assets/portfolio.jpg'; 
 import Blog from  '../assets/blog.jpg'; 
 import Ecomrece from  '../assets/ecommerce.jpg'; 
+import ChatAppPic from "../assets/chatApp.jpg"
+import Saas from "../assets/Saas.jpg"
 
 const projects = [
   {
     id: 1,
-    title: "MERN E-Commerce App",
+    title: "E-Commerce WebApp",
     description: "A full-featured e-commerce platform built with React, Node.js, Express, and MongoDB with payment integration.",
     image: Ecomrece, 
     link: "https://your-ecommerce-app-link.com",
@@ -15,16 +17,29 @@ const projects = [
   {
     id: 2,
     title: "Portfolio Website",
-    description: "A modern, responsive portfolio website to showcase my projects, built using React, Vite, Tailwind CSS, and Framer Motion.",
+    description: "I create modern, responsive portfolio websites to showcase your skills, projects, and personal brand using React, Tailwind, and best UX practices.",
     image: Portfolio,
     link: "https://your-portfolio-link.com",
   },
   {
     id: 3,
-    title: "MERN Blog Platform",
+    title: "Blog CMS Platform",
     description: "A multi-user blog platform with JWT authentication, CRUD features, and rich-text editor using MERN stack.",
     image: Blog,
     link: "https://your-blog-link.com",
+  },
+  {
+    id: 4,
+    title: "Real-Time Chat App",
+    description: "A secure real-time messaging app with user authentication, one-on-one and group chat, typing indicators, and Socket.IO-based instant updates.",
+    image: ChatAppPic,
+    link: "https://your-blog-link.com",
+  },{
+    id: 5,
+    title: "SaaS Dashboard Platform",
+    description: "A multi-tenant SaaS dashboard with user roles, team invites, billing and analytics charts.",
+    image: Saas, 
+    link: "https://your-ecommerce-app-link.com",
   },
 ];
 
