@@ -1,84 +1,69 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import MyPhoto from '../assets/myphoto.jpg'; 
+import MyPhoto from '../assets/myphoto.jpg';
 
 const Hero = () => {
-  const gridSize = 4;
-  const imageSize = 400; // Image size in px (e.g., 400x400)
-  const cellSize = imageSize / gridSize; // = 100
-  const missingPieces = [15, 8, 3];
-
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1]">
-      <div className="max-w-6xl gap-x-20 gap-y-5 mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 space-y-10 md:space-y-0">
-
-        {/* Text Block */}
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#eef2ff] via-[#f3f4f6] to-[#e0f2fe] px-6"
+    >
+      <div className="max-w-7xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-16 py-20 relative">
+        {/* LEFT TEXT SECTION */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="md:w-1/2 text-center md:text-left space-y-6"
+          className="md:w-1/2 text-center md:text-left space-y-6 z-10"
         >
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
               Hashim
-            </span>{' '}
-            — Web Developer
+            </span>
+            <br />Full Stack Web Developer
           </h1>
-          <p className="text-gray-600 text-lg">
-            Crafting modern, creative, and stunning web experiences using the MERN stack and cutting-edge tools.
+          <p className="text-gray-600 text-lg md:text-xl max-w-xl">
+            I build powerful, modern, and responsive web applications using the MERN stack and cutting-edge tools.
           </p>
           <div className="flex justify-center md:justify-start space-x-4 pt-4">
             <a
               href="#projects"
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:scale-105 transform transition duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white shadow-md transition transform hover:scale-105 duration-300"
+              className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white shadow-md hover:scale-105 transition-transform duration-300"
             >
               Contact Me
             </a>
           </div>
         </motion.div>
 
-        {/* Puzzle Grid */}
+        {/* RIGHT IMAGE SECTION */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="md:w-1/2 grid grid-cols-4 gap-2 w-80 h-80 mx-auto"
+          className="md:w-1/2 flex justify-center relative z-10"
         >
-          {[...Array(gridSize * gridSize)].map((_, i) => {
-            const row = Math.floor(i / gridSize);
-            const col = i % gridSize;
+          {/* Glowing Background */}
+          <div className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-purple-500 to-blue-500 blur-3xl rounded-full opacity-30 -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
-            if (missingPieces.includes(i)) {
-              return (
-                <div
-                  key={i}
-                  className="w-full h-0 pb-[100%] bg-gradient-to-br from-gray-300 to-gray-200 rounded-xl shadow-inner"
-                ></div>
-              );
-            }
-
-            return (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.1, rotate: 3 }}
-                className="relative w-full h-0 pb-[100%] overflow-hidden rounded-xl shadow-xl cursor-pointer"
-                style={{
-                  backgroundImage: `url(${MyPhoto})`,
-                  backgroundSize: `${imageSize}px ${imageSize}px`,
-                  backgroundPosition: `-${col * cellSize}px -${row * cellSize}px`,
-                  backgroundRepeat: 'no-repeat',
-                }}
-              ></motion.div>
-            );
-          })}
+          {/* Image Card */}
+          <motion.div
+            whileHover={{ rotate: [0, 2, -2, 0], scale: 1.05 }}
+            transition={{ duration: 0.6 }}
+            className="relative w-[300px] h-[400px] sm:w-[340px] sm:h-[440px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white"
+          >
+            <img
+              src={MyPhoto}
+              alt="Hashim"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>
